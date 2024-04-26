@@ -1,0 +1,56 @@
+@HOST=http://localhost:8000
+@TOKEN=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ5YjE3ODFhLTVhZjItNGNhNi04Y2FiLWZkYjg5MmE0MTI1NyIsIm5hbWUiOiJleGFtcGxlIiwiZW1haWwiOiJleGFtcGxlQGdtYWlsLmNvbSIsImlhdCI6MTcxNDA3MDg2OSwiZXhwIjoxNzE0MDg4ODY5fQ.0A0lbbkV0AGVbx5mqw81NckTWhrZ9WtzDWHK7GnZTAE
+
+# @name register
+POST {{HOST}}/users
+Content-Type: application/json
+
+{
+    "name": "example",
+    "email": "example@gmail.com",
+    "password": "example"
+}
+
+###
+
+# @name login
+POST {{HOST}}/auth
+Content-Type: application/json
+
+{
+    "email": "example@gmail.com",
+    "password": "example"
+}
+
+###
+
+# @name create-movie
+POST {{HOST}}/movies
+Content-Type: application/json
+
+{
+    "name": "filme-11"
+}
+
+###
+
+# @name find-all-movies
+GET {{HOST}}/movies
+###
+
+# @name update-movie
+PUT {{HOST}}/movies/7fc8f327-c1aa-4885-b791-e5d7553b0eb9
+Content-Type: application/json
+
+{
+    "name": "nome atualizado!"
+}
+###
+
+# @name delete-movie
+DELETE {{HOST}}/movies/7fc8f327-c1aa-4885-b791-e5d7553b0eb9
+
+### 
+
+# @name findOne
+GET {{HOST}}/movies/7d67694a-a9d2-4721-a08a-9b0c1a37fb0a
